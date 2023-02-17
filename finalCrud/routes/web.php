@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProductController;
-use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProductController::class, 'index'])->name('product.index');
-Route::get('/product/create', [ProductController::class,'create'])->name('product.create');
-Route::get('/product/{product}', [ProductController::class,'show'])->name('product.show');
-Route::post('/product/{product}', [ProductController::class,'store'])->name('product.store');
+Route::get('/show/{product}', [ProductController::class, 'show'])->name('product.show');
+Route::get('create', [ProductController::class, 'create'])->name('product.create');
+Route::get('destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+Route::post('{product}', [ProductController::class, 'store'])->name('product.store');
+Route::get('{product}', [ProductController::class, 'edit'])->name('product.edit');
+Route::get('product/update/{product}', [ProductController::class, 'update'])->name('product.update');

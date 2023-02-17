@@ -16,8 +16,8 @@ class ProductSeeder extends Seeder
         for ($i=0; $i < 50; $i++) { 
             DB::table('products')->insert([
                 'name' => "Nombre $i",
-                'description' => "Description $i",
-                'price' => $i * 0.85,
+                'description' => "Descripcion numero $i",
+                'price' => $i * 0.83,
             ]);
         }
     }
